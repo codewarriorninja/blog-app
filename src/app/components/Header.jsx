@@ -1,12 +1,14 @@
 'use client'
-import { Button, Navbar, NavbarToggle, TextInput } from "flowbite-react"
+import { Button, Navbar, NavbarToggle, TextInput, theme } from "flowbite-react"
 import Link from "next/link"
 import {AiOutlineSearch} from 'react-icons/ai'
-import {FaMoon} from 'react-icons/fa';
+import {FaMoon, FaSun} from 'react-icons/fa';
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const Header = () => {
     const path = usePathname();
+    const {theme, setTheme} = useTheme();
   return (
     <Navbar className="border-b-2">
       <Link href={'/'} className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">Little</Link>
@@ -17,8 +19,8 @@ const Header = () => {
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
-            <FaMoon />
+        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill onClick={() => setTheme(theme === 'light' ? 'dark' :'light')}>
+            {theme === 'light' ? <FaSun /> : <FaMoon />}
         </Button>
         <Link href={'/sign-in'}>
           <Button gradientDuoTone="purpleToBlue" outline>
