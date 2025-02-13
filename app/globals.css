@@ -7,10 +7,6 @@
   --foreground: #171717;
 }
 
-body::-webkit-scrollbar{
-  display: none;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -18,8 +14,8 @@ body::-webkit-scrollbar{
   }
 }
 
-/* body {
+body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-} */
+}
