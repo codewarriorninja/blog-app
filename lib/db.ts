@@ -12,7 +12,7 @@ const connect = async () => {
     }
 
     if(connectionState === 2){
-        console.log('Connecting......');
+        console.log('🚶Connecting......');
         return;
     }
      
